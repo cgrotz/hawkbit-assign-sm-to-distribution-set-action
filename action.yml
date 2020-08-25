@@ -1,0 +1,25 @@
+name: 'Eclipse Hawkbit Assign Software Module to Distribution Set Action'
+description: 'GitHub Action for assigning software modules to distribution sets in Hawkbit.'
+inputs:
+  hawkbit-host-url: 
+    description: 'Base URL of the Hawkbit instance to use'
+    required: true
+    default: 'https://api.eu1.bosch-iot-rollouts.com'
+  hawkbit-tenant: 
+    description: 'Tenant of the Hawkbit Instance'
+    required: true
+  hawkbit-username: 
+    description: 'Username of the Hawkbit Instance'
+    required: true
+  hawkbit-password: 
+    description: 'Password of the Hawkbit Instance'
+    required: true
+  software-module-id:
+    description: 'ID of the software module to use in Hawkbit'
+    required: false
+  distribution-set-id:
+    description: 'ID of the distribution set '
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
